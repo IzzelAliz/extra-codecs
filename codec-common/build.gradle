@@ -1,0 +1,18 @@
+
+compileJava {
+    javaCompiler.set(javaToolchains.compilerFor {
+        languageVersion = JavaLanguageVersion.of(8)
+    })
+}
+
+compileTestJava {
+    javaCompiler.set(javaToolchains.compilerFor {
+        languageVersion = JavaLanguageVersion.of(17)
+    })
+}
+
+test {
+    javaLauncher.set(javaToolchains.launcherFor {
+        languageVersion = JavaLanguageVersion.of(17)
+    })
+}

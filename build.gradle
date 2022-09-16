@@ -1,0 +1,26 @@
+group 'io.izzel.codec'
+version '1.0-SNAPSHOT'
+
+subprojects {
+    apply plugin: 'java'
+
+    version = rootProject.version
+
+    repositories {
+        mavenCentral()
+        maven {
+            name = 'mojang'
+            url = 'https://libraries.minecraft.net'
+        }
+    }
+
+    dependencies {
+        implementation 'com.mojang:datafixerupper:4.0.26'
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
